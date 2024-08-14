@@ -1,5 +1,5 @@
 export interface IElectronAPI {
-  notifyAppLoaded: () => void;
+  update: () => void;
 }
 
 declare global {

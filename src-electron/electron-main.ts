@@ -1,14 +1,7 @@
-import { app, BrowserWindow, globalShortcut, ipcMain, shell } from "electron";
-import { release } from "node:os";
+import { app, BrowserWindow, ipcMain, shell } from "electron";
 import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
-
-// Disable GPU Acceleration for Windows 7
-if (release().startsWith("6.1")) app.disableHardwareAcceleration();
-
-// Set application name for Windows 10+ notifications
-if (process.platform === "win32") app.setAppUserModelId(app.getName());
 
 if (!app.requestSingleInstanceLock()) {
   app.quit();
@@ -42,11 +35,6 @@ function createWindow() {
       contextIsolation: true,
       preload
     }
-  });
-
-  // Keyboard shortcuts
-  globalShortcut.register("F5", () => {
-    mainWindow?.webContents.reload();
   });
 
   if (process.env.DEV) {
