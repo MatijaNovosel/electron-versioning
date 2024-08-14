@@ -8,7 +8,10 @@
   "private": true,
   "scripts": {
     "dev": "quasar dev -m electron",
-    "build": "del-cli dist && quasar build -m electron"
+    "build": "del-cli dist && quasar build -m electron",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "dependencies": {
     "@quasar/cli": "^2.4.1",
@@ -17,6 +20,7 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitest/ui": "^1.5.3",
     "axios": "^1.2.1",
+    "electron-squirrel-startup": "^1.0.1",
     "pinia": "^2.0.11",
     "pinia-plugin-persistedstate": "^3.2.1",
     "quasar": "^2.16.6",
@@ -27,8 +31,14 @@
   "devDependencies": {
     "@capacitor/cli": "6.0.0",
     "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-deb": "^7.4.0",
+    "@electron-forge/maker-rpm": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.4.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
+    "@electron-forge/plugin-fuses": "^7.4.0",
     "@electron-forge/publisher-s3": "^7.4.0",
-    "@electron/packager": "^18.3.2",
+    "@electron/fuses": "^1.8.0",
     "@quasar/app-vite": "^2.0.0-beta.12",
     "@types/node": "^20.5.9",
     "@typescript-eslint/eslint-plugin": "^6.6.0",
@@ -37,7 +47,6 @@
     "del": "^7.1.0",
     "del-cli": "^5.1.0",
     "electron": "^31.0.0",
-    "electron-builder": "^24.13.3",
     "eslint": "^8.11.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-vue": "^9.0.0",
