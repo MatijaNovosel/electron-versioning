@@ -26,6 +26,8 @@
   },
   "devDependencies": {
     "@capacitor/cli": "6.0.0",
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/publisher-s3": "^7.4.0",
     "@electron/packager": "^18.3.2",
     "@quasar/app-vite": "^2.0.0-beta.12",
     "@types/node": "^20.5.9",
